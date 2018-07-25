@@ -82,6 +82,7 @@ void withoutCAAnimation(withoutAnimationBlock code)
 
 - (void)addLayers
 {
+    _isContinuous = YES;
     _dotsInteractionEnabled = YES;
     _trackCirclesArray = [[NSMutableArray alloc] init];
     _trackLabelsArray  = [[NSMutableArray alloc] init];
@@ -497,12 +498,16 @@ void withoutCAAnimation(withoutAnimationBlock code)
 
 - (void)endTrackingWithTouch:(UITouch *)touch withEvent:(UIEvent *)event
 {
-    [self endTouches];
+    if (!_isContinuous) {
+        [self endTouches];
+    }
 }
 
 - (void)cancelTrackingWithEvent:(UIEvent *)event
 {
-    [self endTouches];
+    if (!_isContinuous) {
+        [self endTouches];
+    }
 }
 
 - (void)endTouches

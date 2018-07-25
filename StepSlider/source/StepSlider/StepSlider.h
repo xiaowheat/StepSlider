@@ -64,6 +64,11 @@ IB_DESIGNABLE
  */
 @property (nonatomic, getter=isDotsInteractionEnabled) IBInspectable BOOL dotsInteractionEnabled;
 
+/**
+ *  A Boolean value that determines whether the slider is continuous. Default value is `YES`.
+ */
+@property (nonatomic) IBInspectable BOOL isContinuous;
+
 
 /**
  *  Color of the slider slider.
