@@ -290,7 +290,7 @@ void withoutCAAnimation(withoutAnimationBlock code)
                         basicTrackCircleAnimation.fromValue = (__bridge id _Nullable)(oldColor);
                         [trackCircle addAnimation:basicTrackCircleAnimation forKey:kTrackAnimation];
                         
-                        [self.delegate stepSliderValueChanged: (float)self.index/self.maxCount];
+                        [self.delegate stepSliderValueChanged: (float)self.index/(self.maxCount-1)];
                     });
                     
                     animationTime += animationTimeDiff;
