@@ -476,7 +476,7 @@ void withoutCAAnimation(withoutAnimationBlock code)
     CGFloat limitedPosition = fminf(fmaxf(maxRadius, position), self.bounds.size.width - maxRadius);
 
     float percentage = (limitedPosition - maxRadius) /  (self.bounds.size.width-maxRadius*2);
-    [self.delegate stepSliderValueChanged: limitedPosition];
+    [self.delegate stepSliderValueChanged: percentage];
     
     withoutCAAnimation(^{
         self->_sliderCircleLayer.position = CGPointMake(limitedPosition, self->_sliderCircleLayer.position.y);
